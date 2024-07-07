@@ -14,12 +14,12 @@ public class StudentGrade{
     public void inputMarks() {
         Scanner s = new Scanner(System.in);
         try {
-            System.out.println("Enter the number of subjects:");
+            System.out.print("Enter the number of subjects:");
             sub = s.nextInt();
             S = new int[sub];
             for (int i = 0; i < sub; i++) {
                 try {
-                    System.out.println("Enter the marks for subject " + (i + 1) + " (out of 100):");
+                    System.out.print("Enter the marks for subject " + (i + 1) + " (out of 100):");
                     int marks=s.nextInt();
                     if (marks<0 || marks>100) {
                         throw new InvalidMarksException("Invalid input. Marks should be between 0 and 100.");
@@ -106,13 +106,13 @@ public class StudentGrade{
     public static void main(String args[]){
         StudentGrade s=new StudentGrade();
         s.inputMarks();
-        System.out.println("************************************");
+        System.out.println("--------------------------------------");
         s.calculateTotal();
-        System.out.println("************************************");
+        System.out.println("---------------------------------------");
         s.average();
-        System.out.println("************************************");
+        System.out.println("---------------------------------------");
         s.gradeSubject();
-        System.out.println("************************************");
+        System.out.println("---------------------------------------");
         s.gradeTotal();
     }
 
